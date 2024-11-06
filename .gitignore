@@ -32,6 +32,8 @@
 *.swp
 *.tab.[ch]
 
+load.imx
+
 # Build tree
 /build-*
 
