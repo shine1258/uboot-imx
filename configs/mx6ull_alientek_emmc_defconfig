@@ -14,10 +14,10 @@ CONFIG_DM_GPIO=y
 CONFIG_DEFAULT_DEVICE_TREE="imx6ull-alientek-emmc"
 CONFIG_SUPPORT_RAW_INITRD=y
 CONFIG_USE_BOOTARGS=y
-CONFIG_BOOTARGS="console=tty1 console=ttymxc0,115200 root=/dev/nfs rw nfsroot=192.168.6.123:/home/shine2048/linux/nfs/rootfs ip=192.168.6.222:192.168.6.123:192.168.6.1:255.255.255.0::eth0:off"
+CONFIG_BOOTARGS="console=ttymxc0,115200 root=/dev/mmcblk1p2 rootwait rw"
 CONFIG_USE_BOOTCOMMAND=y
-CONFIG_BOOTCOMMAND="tftp 80800000 zImage; tftp 83000000 imx6ull-alientek-emmc.dtb; bootz 80800000 - 83000000"
-CONFIG_BOOTDELAY=1
+CONFIG_BOOTCOMMAND="mmc dev 1; fatload mmc 1:1 80800000 zImage; fatload mmc 1:1 83000000 imx6ull-alientek-emmc.dtb; bootz 80800000 - 83000000"
+CONFIG_BOOTDELAY=0
 # CONFIG_CONSOLE_MUX is not set
 CONFIG_SYS_CONSOLE_IS_IN_ENV=y
 CONFIG_BOARD_EARLY_INIT_F=y
