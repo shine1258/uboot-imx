@@ -32,6 +32,8 @@
 *.swp
 *.tab.[ch]
 
+imxdownload
+
 load.imx
 
 # Build tree
